@@ -13,6 +13,10 @@ build/
 .next/
 .nuxt/
 coverage/
+out/
+public/media/
+next-env.d.ts
+*.tsbuildinfo
 
 # Local editor and tooling files
 .vscode/

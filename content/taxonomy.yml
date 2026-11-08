@@ -1,0 +1,12 @@
+topics:
+  - id: kimi-code
+    label: Kimi Code
+  - id: codex
+    label: Codex
+tags:
+  - id: setup
+    label: 安装配置
+  - id: coding-agent
+    label: 编程 Agent
+  - id: workflow
+    label: 工作流

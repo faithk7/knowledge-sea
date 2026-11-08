@@ -1,0 +1,128 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fbfaf7;
+  --fg: #1d2530;
+  --muted: #5d6673;
+  --line: #dcd8cf;
+  --accent: #0b5c8a;
+  --chip: #eceae3;
+  --code: #f1efe9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181d;
+    --fg: #e6e8eb;
+    --muted: #a0a8b3;
+    --line: #2d343d;
+    --accent: #7cc0ec;
+    --chip: #232a32;
+    --code: #1c2229;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.75 system-ui, -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skip { position: absolute; left: -999px; top: 0; background: var(--bg); padding: .5rem 1rem; z-index: 10; }
+.skip:focus { left: 0; }
+
+header.site, footer.site, main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+header.site nav { display: flex; gap: 1.25rem; }
+.brand { font-weight: 700; color: var(--fg); text-decoration: none; letter-spacing: .02em; }
+
+main { padding-top: 2rem; padding-bottom: 3rem; min-height: 60vh; }
+footer.site { padding-top: 1.5rem; padding-bottom: 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
+
+h1 { font-size: 1.9rem; line-height: 1.3; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 2.25rem 0 .75rem; }
+.summary { font-size: 1.1rem; color: var(--muted); margin: 0 0 .75rem; }
+
+.search { margin: 1.5rem 0 1rem; }
+.search label { font-weight: 600; }
+.search .row { display: flex; gap: .5rem; margin: .35rem 0 .75rem; }
+.search input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  padding: .55rem .75rem;
+  font: inherit;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+}
+button {
+  padding: .55rem 1.1rem;
+  font: inherit;
+  color: var(--bg);
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+fieldset { border: 1px solid var(--line); border-radius: 6px; margin: 0 0 .75rem; padding: .5rem .85rem .65rem; }
+legend { padding: 0 .35rem; font-weight: 600; }
+.check { display: inline-flex; align-items: center; gap: .35rem; margin: .15rem 1rem .15rem 0; font-weight: 400; }
+.check input { width: 1.1rem; height: 1.1rem; }
+.hint, .status, .meta { color: var(--muted); font-size: .9rem; }
+
+.list { display: grid; gap: 1rem; }
+.card { padding: 1rem 1.15rem; border: 1px solid var(--line); border-radius: 8px; }
+.card h3 { margin: 0 0 .35rem; font-size: 1.15rem; line-height: 1.4; }
+.card p { margin: 0 0 .5rem; }
+.card .meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .85rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0; padding: 0; }
+.chips a {
+  display: inline-block;
+  padding: .05rem .6rem;
+  background: var(--chip);
+  border-radius: 999px;
+  color: var(--fg);
+  font-size: .85rem;
+  text-decoration: none;
+}
+.chips a:hover { text-decoration: underline; }
+
+.pager { display: flex; justify-content: space-between; margin-top: 1.5rem; }
+
+.prose { margin-top: 1.5rem; overflow-wrap: anywhere; }
+.prose img { max-width: 100%; height: auto; }
+.prose pre { overflow-x: auto; padding: 1rem; background: var(--code); border-radius: 6px; line-height: 1.5; font-size: .9rem; }
+.prose code { background: var(--code); padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+.prose pre code { background: none; padding: 0; }
+.prose blockquote { margin: 1rem 0; padding: .1rem 1rem; background: var(--code); border-radius: 6px; color: var(--muted); }
+.prose table { display: block; overflow-x: auto; border-collapse: collapse; }
+.prose th, .prose td { padding: .4rem .75rem; border: 1px solid var(--line); }
+
+@media (max-width: 30rem) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.6rem; }
+}
